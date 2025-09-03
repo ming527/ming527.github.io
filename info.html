@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/mg_favi.svg" type="images/svg+xml">
+  <script type="text/javascript"
+    src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=e6aeb5d9c9f593783a33ac6714ac55e2"></script>
+
+  <title>info | Ming</title>
+</head>
+
+<body class="subPage subPage3">
+  <header>
+    <h1><span>정보</span></h1>
+  </header>
+  <div class="container">
+    <main class="infoMain"> <!--main-content-->
+
+      <h2>저의 정보가 담긴 서브 페이지입니다. </h2>
+
+      <!-- 슬라이드쇼 컨테이너 -->
+      <div class="slideshow-container">
+
+        <!-- 숫자와 캡션이 있는 이미지 -->
+        <div class="mySlides">
+          <div class="numbertext">1 / 9</div>
+          <img src="images/slide/20160728_141842.jpg" alt="이미지 1">
+          <div class="slideText">친구와 필리핀 여행</div>
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">2 / 9</div>
+          <img src="images/slide/20160728_142542.jpg" alt="이미지 2">
+          <div class="slideText">바다 다이빙</div>
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">3 / 9</div>
+          <img src="images/slide/20160903_052420.jpg" alt="이미지 3">
+          <div class="slideText">서울생명사랑걷기 페이스메이커</div>
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">4 / 9</div>
+          <img src="images/slide/20180115_183645.jpg" alt="이미지 4">
+          <div class="slideText">우리집 강아지</div>
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">5 / 9</div>
+          <img src="images/slide/20180803_100638.jpg" alt="이미지 5">
+          <div class="slideText">학부연구생 시절 만든 nano-mosfet</div>
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">6 / 9</div>
+          <img src="images/slide/20200816_122621.jpg" alt="이미지 6">
+          <div class="slideText">친구와 서핑보드 연습</div>
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">7 / 9</div>
+          <img src="images/slide/20230128_140019.jpg" alt="이미지 7">
+          <div class="slideText">스노우보드 취미</div>
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">8 / 9</div>
+          <img src="images/slide/20231113_121231.jpg" alt="이미지 8">
+          <div class="slideText">서울-부산 자전거국토종주</div>
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">9 / 9</div>
+          <img src="images/slide/장애인도로앱.jpg" alt="이미지 9">
+          <div class="slideText">장애인지도앱 제작</div>
+        </div>
+
+        <!-- 다음, 이전 이미지 버튼 -->
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+      </div>
+
+      <!-- 점 표시기 -->
+      <div class="dots-container">
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+        <span class="dot" onclick="goToSlide(3)"></span>
+        <span class="dot" onclick="goToSlide(4)"></span>
+        <span class="dot" onclick="goToSlide(5)"></span>
+        <span class="dot" onclick="goToSlide(6)"></span>
+        <span class="dot" onclick="goToSlide(7)"></span>
+        <span class="dot" onclick="goToSlide(8)"></span>
+        <span class="dot" onclick="goToSlide(9)"></span>
+      </div>
+      <h3>저의 추억이 담긴 사진들입니다.</h3>
+
+      <!-- 지도 -->
+      <h2>다니던 학교 위치</h2>
+      <div id="map" style="width:100%;height:400px;"></div>
+      <script>
+        var container1 = document.getElementById('map');
+        var options = {
+          center: new kakao.maps.LatLng(37.293289, 126.975739), // 성균관대 자연과학캠퍼스 좌표
+          level: 3 // 확대 레벨 (1이 가장 확대)
+        };
+        var map = new kakao.maps.Map(container1, options);
+
+        // 마커 추가
+        var marker = new kakao.maps.Marker({
+          position: new kakao.maps.LatLng(37.293289, 126.975739)
+        });
+        marker.setMap(map);
+      </script>
+
+
+
+    </main>
+    <aside>
+      <nav class="History">
+        <a href="Personal History.html">
+          <h4>과정</h4>
+          <p>'성장 과정' 사이트로 이동합니다</p>
+        </a>
+      </nav>
+      <nav class="Growth">
+        <a href="Growth goal.html">
+          <h4>목표</h4>
+          <p>'성장 목표' 사이트로 이동합니다</p>
+        </a>
+      </nav>
+      <nav class="info current">
+        <a href="info.html">
+          <h4>정보</h4>
+          <p>'나의 정보' 사이트입니다</p>
+        </a>
+      </nav>
+      <br>
+      <nav class="home">
+        <a href="index.html">
+          <h4>홈으로</h4>
+          <p>'메인 페이지'로 이동합니다</p>
+        </a>
+      </nav>
+
+    </aside>
+  </div>
+  <footer>
+    <a>
+      <p>
+        <span>저자 : 송민기</span><br>
+        <span>이메일 : songmg527@gmail.com</span><br>
+        <span>Copyright 2025. mingiSong. All Rights Reserved</span><br>
+      </p>
+    </a>
+  </footer>
+
+  <script>
+    let currentSlideIndex = 0;
+    const slides = document.getElementsByClassName("mySlides");
+    const dots = document.getElementsByClassName("dot");
+    let autoSlideTimer;
+
+    // 슬라이드 표시 함수
+    function showSlide(index) {
+      // 모든 슬라이드 숨기기
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+      }
+
+      // 모든 점 비활성화
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+      }
+
+      // 인덱스 범위 체크
+      if (index >= slides.length) {
+        currentSlideIndex = 0;
+      }
+      if (index < 0) {
+        currentSlideIndex = slides.length - 1;
+      }
+
+      // 현재 슬라이드와 점 활성화
+      slides[currentSlideIndex].classList.add("active");
+      dots[currentSlideIndex].classList.add("active");
+    }
+
+    // 슬라이드 변경 함수 (이전/다음 버튼용)
+    function changeSlide(direction) {
+      currentSlideIndex += direction;
+      showSlide(currentSlideIndex);
+      resetAutoSlide();
+    }
+
+    // 특정 슬라이드로 이동 (점 클릭용)
+    function goToSlide(slideNumber) {
+      currentSlideIndex = slideNumber - 1;
+      showSlide(currentSlideIndex);
+      resetAutoSlide();
+    }
+
+    // 자동 슬라이드 함수
+    function autoSlide() {
+      currentSlideIndex++;
+      showSlide(currentSlideIndex);
+    }
+
+    // 자동 슬라이드 타이머 재설정
+    function resetAutoSlide() {
+      clearInterval(autoSlideTimer);
+      autoSlideTimer = setInterval(autoSlide, 4000); // 4초마다 변경
+    }
+
+    // 초기화
+    function initSlideshow() {
+      showSlide(currentSlideIndex);
+      autoSlideTimer = setInterval(autoSlide, 4000);
+
+      // 마우스 호버시 자동 슬라이드 일시정지
+      const container = document.querySelector('.slideshow-container');
+      container.addEventListener('mouseenter', () => {
+        clearInterval(autoSlideTimer);
+      });
+
+      container.addEventListener('mouseleave', () => {
+        resetAutoSlide();
+      });
+    }
+
+    // 페이지 로드시 슬라이드쇼 시작
+    document.addEventListener('DOMContentLoaded', initSlideshow);  
+  </script>
+
+
+
+
+</body>
+
+</html>
