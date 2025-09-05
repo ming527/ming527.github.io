@@ -1,0 +1,1089 @@
+@charset "utf-8";
+
+body {
+  font-family: 'Catamaran', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #2c2c2c;
+}
+
+img {
+  max-width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 767px) {
+
+  /* 모바일 */
+  .topPage header {
+    height: 90vh;
+    background: url(../images/top_bg.jpg) no-repeat center top/cover;
+    padding-top: 50px;
+    margin-bottom: 64px;
+    z-index: 100;
+  }
+
+  .topPage header h1 img {
+    width: 360px;
+  }
+
+  .topPage header h1 {
+    text-align: center;
+  }
+
+  .topPage header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .topPage header nav ul {
+    display: flex;
+    justify-content: space-around;
+    border-top: 2px solid #dddddd;
+    border-bottom: 2px solid #dddddd;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 12px 0px 10px;
+    margin: 0 auto;
+  }
+
+  .topPage header nav ul li a {
+    font-size: 18px;
+    font-weight: 100;
+  }
+
+  .topPage header nav ul li a:hover {
+    text-decoration: underline double;
+  }
+
+  .card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .card:hover {
+    z-index: 1;
+  }
+
+  .card:hover .card-image img {
+    transform: scale(1.05);
+  }
+
+  .linkList {
+    padding: 0 20px;
+  }
+
+  .linkList li {
+    margin-bottom: 40px;
+  }
+
+  .linkList li a {
+    text-align: center;
+    display: block;
+    background-color: #f5f5f5;
+  }
+
+  .linkList li a span {
+    display: block;
+    padding: 15px 15px 10px;
+    font-size: 22px;
+    font-weight: 200;
+  }
+
+  .linkList li a:hover {
+    filter: brightness(105%);
+  }
+
+  .linkList:has(.card:hover) .card:not(:hover) {
+    filter: blur(2px);
+    opacity: 0.8;
+  }
+
+  /* subpage header & main */
+  .subPage header {
+    border-bottom: thick double #000000;
+    border-top: 14px solid #f5f5f5;
+    padding-top: 40px;
+    margin-bottom: 30px;
+  }
+
+  .subPage header h1 {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: .17em;
+    text-transform: uppercase;
+  }
+
+  .subPage header h1 span {
+    background-image: linear-gradient(135deg, #e6ba5d 0%, #9ac78a 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .subPage h2 {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: .17em;
+    margin-bottom: 10px;
+  }
+
+  .subPage .lead {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 11px;
+    letter-spacing: .05em;
+    line-height: 2;
+  }
+
+  .subPage h3 {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+
+  .subPage main {
+    flex: 1;
+    padding: 0 20px;
+    margin: 10px 10px;
+    overflow: hidden;
+  }
+
+  .subPage main p {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+
+
+  /* 사이드바 */
+
+
+  .subPage aside {
+    position: static;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+  }
+
+  .subPage aside nav {
+    flex-grow: 1;
+    border-bottom: 1px solid #000000;
+    padding: 10px 5px;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .subPage aside nav h4 {
+    font-size: 13px;
+    margin: 0;
+    text-align: center;
+  }
+
+  .subPage aside nav p {
+    display: none;
+  }
+
+  .subPage aside nav.current a {
+    color: #999;
+    /* 회색 */
+  }
+
+  .subPage aside nav.current h4::before {
+    content: "✔ ";
+    color: #727272;
+    /* 회색 */
+  }
+
+  .subPage aside nav.home {
+    border: 1px solid #444;
+    /* 박스 테두리 */
+    border-radius: 8px;
+    /* 모서리 둥글게 */
+    background-color: #f0f0f0;
+    /* 연한 배경색 */
+    padding: 10px;
+    margin-bottom: 18px;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .subPage aside nav a {
+    text-decoration: none;
+    color: #222;
+    display: block;
+    text-align: center;
+  }
+
+  .subPage aside nav:hover {
+    background-color: #ddd;
+    /* hover 시 진한 배경 */
+    transform: scale(1.03);
+    /* hover 시 살짝 확대 */
+  }
+
+
+  /* personal history 이미지 */
+  .subPage2 main div {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+
+  .History_image1 {
+    background: url(../images/sub_walk.jpg) no-repeat center center;
+    background-size: cover;
+    /* 이미지가 div를 완전히 채움 */
+    background-attachment: fixed;
+  }
+
+  .History_image2 {
+    background: url(../images/sub_study.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .History_image3 {
+    background: url(../images/sub_sport.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .text {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background: #18332c;
+    font-size: .9rem;
+    padding: 30px 10px;
+  }
+
+  .texts {
+    font-size: 1.4rem;
+    font-weight: 50;
+  }
+
+
+  /* growth goal 페이지 헤더 장식 */
+  @font-face {
+    font-family: 'Sucrose Bold Two';
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/sucrose.woff2') format('woff2');
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .subPage1 header {
+    all: unset;
+    /* <-- 공통 스타일 초기화 */
+    all: revert;
+    /* 또는 이걸로 브라우저 기본값 복원 */
+  }
+
+  .subPage1 header {
+    position: relative;
+    background: url(../images/sub_sunset.jpg) no-repeat center center;
+    height: 100vh;
+    background-size: cover;
+    font-family: 'Sucrose Bold Two';
+    overflow: hidden;
+  }
+
+  .subPage1 header img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100%;
+    object-fit: fill;
+    z-index: 2;
+  }
+
+  .subPage1 header h2 {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 12vw;
+    line-height: .8;
+    margin-top: 0;
+    text-align: center;
+    color: #ff4500;
+    z-index: 1;
+
+  }
+
+  .subPage1 header h2 span {
+    display: block;
+    font-size: 8.75vw;
+    color: #ff4500;
+    z-index: 1;
+  }
+
+  .subPage1>div {
+    margin-bottom: 20px;
+  }
+
+
+
+  .text1 {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background: #c98d7e9f;
+    font-size: .9rem;
+    padding: 30px 10px;
+  }
+
+  .texts1 {
+    font-size: 1.4rem;
+    font-weight: 50;
+  }
+
+  /* info 페이지 슬라이더 크기 */
+
+
+  .infoMain {
+    padding: 2rem;
+  }
+
+  .infoMain h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .infoMain h3 {
+    color: #666;
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  /* 슬라이드쇼 컨테이너의 디자인 */
+  .slideshow-container {
+    max-width: 100%;
+    max-height: 400px;
+    background: #000000;
+    position: relative;
+    margin: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* 이미지를 숨기는데 사용 */
+  .mySlides {
+    display: none;
+    position: relative;
+    animation: fade 0.5s ease-in-out;
+  }
+
+  .mySlides.active {
+    display: block;
+  }
+
+
+  .mySlides img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 4px 0;
+  }
+
+  .slideText {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    text-align: center;
+  }
+
+  /* 네비게이션 버튼 */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    user-select: none;
+    transition: all 0.3s ease;
+    border-radius: 0 3px 3px 0;
+  }
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .prev:hover,
+  .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+  }
+
+  /* 점 표시기 */
+  .dots-container {
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0;
+  }
+
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .dot.active,
+  .dot:hover {
+    background-color: #717171;
+    transform: scale(1.2);
+  }
+
+
+  /* 페이드 애니메이션 */
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media all and (max-width: 920px) {
+    .slider-inner {
+      padding: 0;
+      /* 좌우 이미지 숨김 */
+      overflow: hidden;
+    }
+  }
+
+
+  /* footer */
+  footer {
+    background: url(../images/mg_sign.svg) no-repeat right top/200px;
+    background-color: #b1b1b1;
+
+    margin-top: 30px;
+    padding-top: 38px;
+  }
+
+  footer a {
+    display: inline-block;
+    margin: 0 20px 10px 20px;
+    color: #000000;
+    font-size: 12px;
+  }
+}
+
+/* -----------------------------------------------pc버전 -----------------------------*/
+@media screen and (min-width: 768px) {
+  .topPage header {
+    height: 90vh;
+    background: url(../images/top_bg.jpg) no-repeat center top/cover;
+    padding-top: 50px;
+    margin-bottom: 64px;
+    z-index: 100;
+  }
+
+  .topPage header h1 img {
+    width: 360px;
+  }
+
+  .topPage header h1 {
+    text-align: center;
+  }
+
+  .topPage header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .topPage header nav ul {
+    display: flex;
+    justify-content: space-around;
+    border-top: 2px solid #dddddd;
+    border-bottom: 2px solid #dddddd;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 12px 0px 10px;
+    margin: 0 auto;
+  }
+
+  .topPage header nav ul li a {
+    font-size: 18px;
+    font-weight: 100;
+  }
+
+  .topPage header nav ul li a:hover {
+    text-decoration: underline double;
+  }
+
+  .card {
+    background-color: white;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+  }
+
+  .card-image img {
+    width: 800px;
+    height: 600px;
+    border-radius: 15px;
+    overflow: hidden;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .card:hover {
+    z-index: 1;
+  }
+
+  .card:hover .card-image img {
+    transform: scale(1.05);
+  }
+
+  .linkList {
+    max-width: 1400px;
+    padding: 0 20px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .linkList li {
+    margin-bottom: 40px;
+  }
+
+
+  /* 핵심: 이미지와 텍스트를 직접 감싸는 '내부 a'를 그리드 컨테이너로 */
+  .linkList .card li>a {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 이미지 1, 텍스트 1 */
+    grid-template-areas: "image text";
+    /* 기본 배치 */
+    align-items: center;
+    gap: 24px;
+  }
+
+  /* 그리드 영역 지정 */
+  .linkList .card li>a .card-image {
+    grid-area: image;
+  }
+
+  .linkList .card li>a span {
+    grid-area: text;
+    font-size: 2rem;
+  }
+
+  /* 짝수 카드: 좌우 뒤집기 (텍스트-이미지) */
+  .linkList .card:nth-child(even) li>a {
+    grid-template-areas: "text image";
+  }
+
+  .linkList .card:nth-child(even) li>a span {
+    text-align: right;
+  }
+
+  .linkList .card:nth-child(odd) li>a span {
+    text-align: left;
+  }
+
+  /* 이미지가 칸을 꽉 채우도록 */
+  .linkList .card .card-image {
+    width: 100%;
+  }
+
+  .linkList .card .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* 필요 시 고정 비율: */
+    /* aspect-ratio: 16 / 9; */
+  }
+
+
+  /* 짝수번째 카드 뒤집기 */
+  .linkList .card:nth-child(even) .card-image {
+    grid-column: 2;
+  }
+
+  .linkList .card:nth-child(even) span {
+    grid-column: 1;
+    text-align: right;
+  }
+
+
+
+  .linkList li a:hover {
+    filter: brightness(105%);
+  }
+
+  .linkList:has(.card:hover) .card:not(:hover) {
+    filter: blur(2px);
+    opacity: 0.8;
+  }
+
+  /* subpage header & main */
+  .subPage header {
+    border-bottom: thick double #000000;
+    border-top: 14px solid #f5f5f5;
+    padding-top: 40px;
+    margin-bottom: 30px;
+  }
+
+  .subPage header h1 {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: .17em;
+    text-transform: uppercase;
+  }
+
+  .subPage header h1 span {
+    background-image: linear-gradient(135deg, #e6ba5d 0%, #9ac78a 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .subPage h2 {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: .17em;
+    margin-bottom: 10px;
+  }
+
+  .subPage .lead {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 11px;
+    letter-spacing: .05em;
+    line-height: 2;
+  }
+
+  .subPage h3 {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+
+  .subPage main {
+    flex: 1;
+    padding: 0 20px;
+    margin: 10px 10px;
+    overflow: hidden;
+  }
+
+  .subPage main p {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+    max-width: 1200px;
+    margin: 2rem auto;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+
+
+  /* 사이드바 */
+  .subPage aside {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 20px;
+    height: fit-content;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 10;
+  }
+
+  .subPage aside nav {
+    border-left: 1px solid #000000;
+    padding: 7px 10px;
+    margin-bottom: 18px;
+  }
+
+  .subPage aside h4 {
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: .5em;
+  }
+
+  .subPage aside p {
+    font-size: 13px;
+    margin-bottom: 1em;
+  }
+
+  .subPage aside nav.current a {
+    color: #999;
+    /* 회색 */
+  }
+
+  .subPage aside nav.current h4::before {
+    content: "✔ ";
+    color: #727272;
+    /* 회색 */
+  }
+
+
+
+  /* personal history 이미지 */
+  .subPage2 main div {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+
+  .History_image1 {
+    background: url(../images/sub_walk.jpg) no-repeat center center;
+    background-size: cover;
+    /* 이미지가 div를 완전히 채움 */
+    background-attachment: fixed;
+  }
+
+  .History_image2 {
+    background: url(../images/sub_study.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .History_image3 {
+    background: url(../images/sub_sport.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .text {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background: #18332c;
+    font-size: .9rem;
+    padding: 30px 10px;
+  }
+
+  .texts {
+    font-size: 1.4rem;
+    font-weight: 50;
+  }
+
+
+  /* growth goal 페이지 헤더 장식 */
+  @font-face {
+    font-family: 'Sucrose Bold Two';
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/sucrose.woff2') format('woff2');
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .subPage1 header {
+    all: unset;
+    /* <-- 공통 스타일 초기화 */
+    all: revert;
+    /* 또는 이걸로 브라우저 기본값 복원 */
+  }
+
+  .subPage1 header {
+    position: relative;
+    background: url(../images/sub_sunset.jpg) no-repeat center center;
+    height: 100vh;
+    background-size: cover;
+    font-family: 'Sucrose Bold Two';
+    overflow: hidden;
+  }
+
+  .subPage1 header img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100%;
+    object-fit: fill;
+    z-index: 2;
+  }
+
+  .subPage1 header h2 {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 12vw;
+    line-height: .8;
+    margin-top: 0;
+    text-align: center;
+    color: #ff4500;
+    z-index: 1;
+
+  }
+
+  .subPage1 header h2 span {
+    display: block;
+    font-size: 8.75vw;
+    color: #ff4500;
+    z-index: 1;
+  }
+
+  .subPage1>div {
+    margin-bottom: 20px;
+  }
+
+
+
+  .text1 {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background: #c98d7e9f;
+    font-size: .9rem;
+    padding: 30px 10px;
+  }
+
+  .texts1 {
+    font-size: 1.4rem;
+    font-weight: 50;
+  }
+
+  /* info 페이지 슬라이더 크기 */
+
+
+  .infoMain {
+    padding: 2rem;
+  }
+
+  .infoMain h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .infoMain h3 {
+    color: #666;
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  /* 슬라이드쇼 컨테이너의 디자인 */
+  .slideshow-container {
+    max-width: 100%;
+    max-height: 400px;
+    background: #000000;
+    position: relative;
+    margin: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* 이미지를 숨기는데 사용 */
+  .mySlides {
+    display: none;
+    position: relative;
+    animation: fade 0.5s ease-in-out;
+  }
+
+  .mySlides.active {
+    display: block;
+  }
+
+
+  .mySlides img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 4px 0;
+  }
+
+  .slideText {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    text-align: center;
+  }
+
+  /* 네비게이션 버튼 */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    user-select: none;
+    transition: all 0.3s ease;
+    border-radius: 0 3px 3px 0;
+  }
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .prev:hover,
+  .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+  }
+
+  /* 점 표시기 */
+  .dots-container {
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0;
+  }
+
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .dot.active,
+  .dot:hover {
+    background-color: #717171;
+    transform: scale(1.2);
+  }
+
+
+  /* 페이드 애니메이션 */
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media all and (max-width: 920px) {
+    .slider-inner {
+      padding: 0;
+      /* 좌우 이미지 숨김 */
+      overflow: hidden;
+    }
+  }
+
+
+  /* footer */
+  footer {
+    background: url(../images/mg_sign.svg) no-repeat right top/200px;
+    background-color: #b1b1b1;
+
+    margin-top: 30px;
+    padding-top: 38px;
+  }
+
+  footer a {
+    display: inline-block;
+    margin: 0 20px 10px 20px;
+    color: #000000;
+    font-size: 12px;
+  }
+}
